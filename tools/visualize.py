@@ -356,7 +356,8 @@ if __name__ == '__main__':
 # Example 1: Visualize every sequence in the data folder belonging to train or val dataset
 # python visualize.py --clear -d ../data/dataset/RADTrack -o ../data/vid --splits val train --video -rmf
 
-# Example 2: Visualize sequence with number 76 and 23
-# python visualize.py --clear -d ../data/dataset/RADTrack -o ../data/vid -s 76 23 --video -rmf
+# Example 2: Visualize sequence with number 12 and 13
+# python visualize.py --clear -d ../data/dataset/RADTrack -o ../data/vid -s 12 13 --video -rmf
 
+# Example 3: Visualize only camera and RD image frame 101 of sequence 12 with tracker predictions
 # python visualize.py --clear -d ../data/dataset/RADTrack -t ../data/trackers/rdtrack-val/run30_e79_ms5 -tp rdtrack -n run30_e79_ms5 -o ../data/vid -s 12 -f 101 --video --only-stereo-rd

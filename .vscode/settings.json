@@ -1,0 +1,23 @@
+{
+    "python.analysis.exclude": [
+        "**/data"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+    },
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/.venv": true,
+    },
+    "files.associations": {
+        "**/radtrack*.txt": "CSV",
+        "**/frame_mapping.txt": "CSV",
+        "**/*.ui": "xml",
+    }
+}

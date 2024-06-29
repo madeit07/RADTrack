@@ -1,0 +1,6 @@
+numpy==1.24.4
+opencv-python-headless>=4.9.0.80
+PyQt6>=6.6.1
+joblib>=1.3.2
+tqdm>=4.66.2
+pyqtgraph>=0.13.3

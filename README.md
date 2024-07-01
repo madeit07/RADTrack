@@ -112,7 +112,7 @@ If one wished to, the splits can be merged. Simply copy each sequence directory 
 
 ### Dataset license
 
-The dataset is licensed under [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+The tools and code are licensed under [MIT](./LICENSE). The dataset is licensed under [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ## RADTrack Labeling/Viewing Tool
 

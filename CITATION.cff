@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Dell"
+    given-names: "Martin"
+  - family-names: "Bradfisch"
+    given-names: "Wolfgang"
+  - family-names: "Schober"
+    given-names: "Steffen"
+  - family-names: "Klöck"
+    given-names: "Clemens"
+  title: "RadarMOTR: Multi-Object Tracking with Transformers on Range-Doppler Maps"
+  year: 2024
+  collection-title: "International Conference Radar 2024 (RADAR2024)"
+references:
+  - authors:
+    - family-names: "Zhang"
+      given-names: "Ao"
+    - family-names: "Nowruzi"
+      given-names: "Farzan Erlik"
+    - family-names: "Laganiere"
+      given-names: "Robert"
+    type: conference-paper
+    title: "RADDet: Range-Azimuth-Doppler based Radar Object Detection for Dynamic Road Users"
+    year: 2021
+    collection-title: "2021 18th Conference on Robots and Vision (CRV)"

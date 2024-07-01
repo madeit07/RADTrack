@@ -1,4 +1,4 @@
-# RADTrack 
+# RADTrack
 
 **RADTrack** is the modified version of the [RADDet](https://github.com/ZhangAoCanada/RADDet) dataset which incorporates the Multi-Object Tracking (MOT) use case. **RADTrack** transforms the RADDet data into sequences showing different times and locations where the data was recorded. Labeled object IDs allow for tracking of these objects using Range-Azimuth-Doppler (RAD) data. 
 
@@ -205,3 +205,16 @@ Create a new project and configure it. Name it `Default` and save it under `labe
 ## Credits
 
 The original dataset [RADDet](https://github.com/ZhangAoCanada/RADDet) which RADTrack is based on, was created by Ao Zhang, Farzan Erlik Nowruzi and Robert Laganiere from University of Ottawa and Sensorcortek Inc.
+
+## Citation
+
+Please use the following citation when using the dataset:
+
+```bib
+@inproceedings{RADTrack2024,
+    author = {Dell, Martin and Bradfisch, Wolfgang and Schober, Steffen and Klöck, Clemens},
+    title = {{RadarMOTR: Multi-Object Tracking with Transformers on Range-Doppler Maps}},
+    booktitle = {International Conference Radar 2024 (RADAR2024)},
+    year = {2024}
+}
+```

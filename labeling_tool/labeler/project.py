@@ -46,7 +46,7 @@ class Project:
 
         os.makedirs(self.project_dir, exist_ok=True)
         with open(self.project_file, 'w') as f:
-            json.dump(data, f)
+            json.dump(data, f, separators=(',', ':'))
 
     @staticmethod
     def load(project_file: str) -> 'Project':

@@ -56,7 +56,7 @@ def label_sequence(seq_name: str, split: str, seq_dir: str, out_dir: str, args: 
         gt[i]['ids'] = ids.tolist()
 
     with open(out_gt_file, 'w') as f:
-        json.dump(gt, f)
+        json.dump(gt, f, separators=(',', ':'))
 
 # https://stackoverflow.com/a/58936697
 @contextlib.contextmanager

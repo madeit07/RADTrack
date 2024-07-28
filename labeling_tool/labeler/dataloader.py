@@ -251,7 +251,7 @@ class RADTrackSequence:
     def save_gt(self):
         gt_file = self.gt_file()
         with open(gt_file, 'w') as f:
-            json.dump(self.gt, f)
+            json.dump(self.gt, f, separators=(',', ':'))
 
     def load_prediction(self, file_path: str):
         if not os.path.exists(file_path):

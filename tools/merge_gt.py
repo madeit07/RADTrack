@@ -82,7 +82,7 @@ def merge_gt(seq_dir: str):
 
     # Write GT json
     with open(os.path.join(gt_dir, 'gt.json'), 'w') as f:
-        json.dump(gts, f)
+        json.dump(gts, f, separators=(',', ':'))
 
     # Remove old gt files
     for gt_filename in gt_filenames:

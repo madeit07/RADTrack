@@ -1,21 +1,25 @@
 # RADTrack
 
-**RADTrack** is the modified version of the [RADDet](https://github.com/ZhangAoCanada/RADDet) dataset which incorporates the Multi-Object Tracking (MOT) use case. **RADTrack** transforms the RADDet data into sequences showing different times and locations where the data was recorded. Labeled object IDs allow for tracking of these objects using Range-Azimuth-Doppler (RAD) data. 
+**RADTrack** is the modified version of the [RADDet](https://github.com/ZhangAoCanada/RADDet) dataset which incorporates the Multi-Object Tracking (MOT) use case. 
+**RADTrack** transforms the [RADDet](https://github.com/ZhangAoCanada/RADDet) data into sequences showing different times and locations where the data was recorded. 
+Labeled object IDs allow for tracking of these objects using Range-Azimuth-Doppler (RAD) data.
 
-With **RADTrack** you can:
-- Train and evaluate an object detector on Range-Azimuth, Range-Doppler and Cartesian Radar data
-- Train and evaluate an object classifier on Range-Azimuth, Range-Doppler and Cartesian Radar data
-- Train and evaluate a tracker on Range-Azimuth, Range-Doppler and Cartesian Radar data
+With the **RADTrack** dataset, you can:
+- Train and evaluate object detection models on Range-Azimuth, Range-Doppler, and Cartesian Radar data
+- Train and evaluate object classification models on Range-Azimuth, Range-Doppler, and Cartesian Radar data
+- Train and evaluate object tracking models on Range-Azimuth, Range-Doppler, and Cartesian Radar data
 
 ## Radar(stationary) Dataset for Dynamic Road Users
 
 ### Dataset link
 
-- TBA
+- [Nextcloud](https://nx47801.your-storageshare.de/s/7JDez5BXZEE5gPr)
 
 ### Dataset format
 
-The folder structure and additional meta data resemble the [MOT20](https://arxiv.org/abs/2003.09003) format allowing to use standard evaluation tools like [TrackEval](https://github.com/JonathonLuiten/TrackEval) only after minimal change of the GT data format.
+The folder structure and additional metadata in RADTrack are designed to mirror the [MOT20](https://arxiv.org/abs/2003.09003) format. 
+This similarity enables seamless integration with standard evaluation tools like [TrackEval](https://github.com/JonathonLuiten/TrackEval), 
+requiring only minor adjustments to the ground truth (GT) data format.
 
 ```
 |-- {RADTrack ROOT}
@@ -52,9 +56,10 @@ The folder structure and additional meta data resemble the [MOT20](https://arxiv
 
 ### Dataset details
 
-The dataset contains totally **10158 frames** distributed through **24 sequences**. 
-For the data capture, the same radar configuration through the entire research was used. 
-The details of the data capture is shown below and available in the `sensors_para/radar_config.json` file.
+The RADTrack dataset comprises **10,158 frames**, organized into **24 sequences**. 
+To ensure consistency, the same radar configuration throughout the entire data collection process was used. 
+The specifics of the data capture settings are summarized below and can also be found in the `sensors_para/radar_config.json` file.
+
 ```json
 "designed_frequency":       76.8 Hz,
 "config_frequency":         77 Hz,
@@ -67,25 +72,26 @@ The details of the data capture is shown below and available in the `sensors_par
 "velocity_resolution":      0.41968030701528203 (m/s)/bin
 ```
 
-The dataset has 6 classes, different input formats and ground truth formats. All the information that stored in the dataset can be concluded as follow.
-- **RAD:** 3D-FFT radar data as a matrix of `complex64` numbers with size (256, 256, 64) saved in numpy format.
-- **stereo_image:**	2 rectified stereo images.
-- **gt:** Ground truth as JSON file. It includes a list of `{ "classes", "boxes", "cart_boxes", "ids" }` dictionaries where each one represents one frame. Each field in the dictionary contains a list of size `n` where `n` is the number of radar objects in the frame.
-- **sensors_para:** `stereo_para` for stereo depth estimation, and `registration_matrix` for cross-sensor registration.
-- **seqmaps:** Contains a sequence mapping file (csv) for each split. This tells other programs which splits exist and what sequences are included.
-- **frame_mapping.txt:** Contains a mapping of matching frames in [RADDet](https://github.com/ZhangAoCanada/RADDet) and RADTrack datasets as a CSV file. It is included to support backwards compatibility to the [RADDet](https://github.com/ZhangAoCanada/RADDet) dataset.
-- **seqinfo.ini:** Contains meta information about a sequence. E.g. the length of the sequence.
+The dataset consists of 6 classes and various input and ground truth formats. Below is a summary of the information stored in the dataset.
 
-**Note:** for `classes`, they are `["person", "bicycle", "car", "motorcycle", "bus", "truck"]`.  
-**Also Note:** for `boxes`, the format is `[x_center, y_center, z_center, w, h, d]` where `x` is Range, `y` is Angle and `z` is Doppler axis.  
-**Also Note:** for `cart_box`, the format is `[y_center, x_center, h, w]`.  
-**Also Note:** for `stereo_para`, `left_maps.npy` and `right_maps.npy` are derived from `cv2.initUndistortRectifyMap(...)` and include the maps in both `x` and `y` directions; all other matrices are derived from `cv2.stereoRectify(...)`.  
+- **RAD:** 3D-FFT radar data stored as a matrix of `complex64` numbers with dimensions (256, 256, 64) in NumPy format.
+- **stereo_image:**	Two rectified stereo images.
+- **gt:** A JSON file containing a list of dictionaries. Each dictionary corresponds to a specific frame and includes a list of entries, where the number of entries is equal to the number of radar objects present in that frame. The dictionary has the following keys: 
+  - `classes`: A list of class labels. There are 6 classes: `person`, `bicycle`, `car`, `motorcycle`, `bus`, and `truck`.
+  - `boxes`: A list of bounding box coordinates in the format `[x_center, y_center, z_center, w, h, d]`, where `x` represents Range, `y` represents Angle, and `z` represents Doppler axis.
+  - `cart_boxes`: A list of Cartesian bounding box coordinates in the format `[y_center, x_center, h, w]`.
+  - `ids`: A list of object IDs.
+- **sensors_para:** Includes `stereo_para` for stereo depth estimation and `registration_matrix` for cross-sensor registration.
+- **seqmaps:** A CSV file for each split, indicating which sequences are included.
+- **frame_mapping.txt:** A CSV file containing a mapping of matching frames between the RADDet and RADTrack datasets for backwards compatibility.
+- **seqinfo.ini:** A file containing meta information about each sequence, such as its length.
+
+**Note:** The `stereo_para` includes `left_maps.npy` and `right_maps.npy`, which are derived from `cv2.initUndistortRectifyMap(...)` and contain maps in both `x` and `y` directions. All other matrices are derived from `cv2.stereoRectify(...)`.
 
 ### Dataset splits
 
-The dataset is split as follows: **70%** training data, **20%** validation data, **10%** test data.
-
-If one wished to, the splits can be merged. Simply copy each sequence directory into the desired split folder and adjust the `seqmaps` files accordingly.
+The dataset is divided into three splits: **70%** for training, **20%** for validation, and **10%** for testing. 
+If you need to modify these splits, you can merge them by copying the sequence directories into the desired split folder and updating the corresponding `seqmaps` files.
 
 ### Statistics
 
@@ -211,7 +217,7 @@ The original dataset [RADDet](https://github.com/ZhangAoCanada/RADDet) which RAD
 Please use the following citation when using the dataset:
 
 ```bib
-@inproceedings{RADTrack2024,
+@inproceedings{RadarMOTR2024,
     author = {Dell, Martin and Bradfisch, Wolfgang and Schober, Steffen and Klöck, Clemens},
     title = {{RadarMOTR: Multi-Object Tracking with Transformers on Range-Doppler Maps}},
     booktitle = {International Conference Radar 2024 (RADAR2024)},

@@ -60,16 +60,16 @@ The RADTrack dataset comprises **10,158 frames**, organized into **24 sequences*
 To ensure consistency, the same radar configuration throughout the entire data collection process was used. 
 The specifics of the data capture settings are summarized below and can also be found in the `sensors_para/radar_config.json` file.
 
-```json
-"designed_frequency":       76.8 Hz,
-"config_frequency":         77 Hz,
-"maximum_range":            50 m,
-"range_size":               256,
-"azimuth_size":             256,
-"doppler_size":             64,
-"range_resolution":         0.1953125 m/bin,
-"angular_resolution":       0.006135923 radian/bin,
-"velocity_resolution":      0.41968030701528203 (m/s)/bin
+```jsonc
+"designed_frequency":  76.8, // Hz
+"config_frequency":    77, // Hz
+"maximum_range":       50, // m
+"range_size":          256,
+"azimuth_size":        256,
+"doppler_size":        64,
+"range_resolution":    0.1953125, // m/bin
+"angular_resolution":  0.006135923, // radian/bin
+"velocity_resolution": 0.41968030701528203, // (m/s)/bin
 ```
 
 The dataset consists of 6 classes and various input and ground truth formats. Below is a summary of the information stored in the dataset.
@@ -86,7 +86,8 @@ The dataset consists of 6 classes and various input and ground truth formats. Be
 - **frame_mapping.txt:** A CSV file containing a mapping of matching frames between the RADDet and RADTrack datasets for backwards compatibility.
 - **seqinfo.ini:** A file containing meta information about each sequence, such as its length.
 
-**Note:** The `stereo_para` includes `left_maps.npy` and `right_maps.npy`, which are derived from `cv2.initUndistortRectifyMap(...)` and contain maps in both `x` and `y` directions. All other matrices are derived from `cv2.stereoRectify(...)`.
+> [!NOTE]
+> The `stereo_para` includes `left_maps.npy` and `right_maps.npy`, which are derived from `cv2.initUndistortRectifyMap(...)` and contain maps in both `x` and `y` directions. All other matrices are derived from `cv2.stereoRectify(...)`.
 
 ### Dataset splits
 

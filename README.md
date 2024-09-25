@@ -9,6 +9,11 @@ With the **RADTrack** dataset, you can:
 - Train and evaluate object classification models on Range-Azimuth, Range-Doppler, and Cartesian Radar data
 - Train and evaluate object tracking models on Range-Azimuth, Range-Doppler, and Cartesian Radar data
 
+## Paper
+
+- This dataset is introduced and used by [RadarMOTR](https://github.com/madeit07/RadarMOTR) which is accepted in International Conference Radar 2024 (RADAR2024).
+- [Accepted Preprint](https://bwsyncandshare.kit.edu/s/zCgc5o89L44oN5a)
+
 ## Radar(stationary) Dataset for Dynamic Road Users
 
 ### Dataset link

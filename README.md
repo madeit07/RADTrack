@@ -11,8 +11,9 @@ With the **RADTrack** dataset, you can:
 
 ## Paper
 
-- This dataset is introduced and used by [RadarMOTR](https://github.com/madeit07/RadarMOTR) which is accepted in International Conference Radar 2024 (RADAR2024).
+- This dataset is introduced and used by [RadarMOTR](https://github.com/madeit07/RadarMOTR) which is accepted in 2024 International Radar Conference (RADAR).
 - [Accepted Preprint](https://bwsyncandshare.kit.edu/s/zCgc5o89L44oN5a)
+- [IEEE Xplore Version](https://ieeexplore.ieee.org/document/10994166)
 
 ## Radar(stationary) Dataset for Dynamic Road Users
 
@@ -226,7 +227,9 @@ Please use the following citation when using the dataset:
 @inproceedings{RadarMOTR2024,
     author = {Dell, Martin and Bradfisch, Wolfgang and Schober, Steffen and Klöck, Clemens},
     title = {{RadarMOTR: Multi-Object Tracking with Transformers on Range-Doppler Maps}},
-    booktitle = {International Conference Radar 2024 (RADAR2024)},
-    year = {2024}
+    booktitle = {2024 International Radar Conference (RADAR)},
+    year = {2024},
+    pages = {1-6},
+    doi = {10.1109/RADAR58436.2024.10994166}
 }
 ```
